@@ -473,6 +473,13 @@
   .footer-column > span {
     margin-bottom: 30px;
   }
+
+
+  .subscribe-block {
+    width: 100%;
+
+    background: linear-gradient(0deg, #072445 60%, #127EBD 100%);
+  }
   .footer-top {
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -573,6 +580,15 @@
 }
 
 @media screen and (max-width: 820px) {
+  .news-cont {
+    &:hover {
+      .single-news {
+        &:not(:hover) {
+          opacity: 1;
+        }
+      }
+    }
+  }
   .hidden-menu {
     height: calc(100vh - var(--mob));
     overflow-y: auto;
@@ -586,15 +602,7 @@
       display: flex;
       margin-top: auto;
     }
-    .news-cont {
-      &:hover {
-        .single-news {
-          &:not(:hover) {
-            opacity: 1;
-          }
-        }
-      }
-    }
+
     .menu {
       width:  100%;
 
