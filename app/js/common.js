@@ -193,6 +193,7 @@ function checkHeaderHeight() {
         let hh = document.querySelector('.header').offsetHeight;
         let mainBlock = document.querySelector('.hero-slider');
         mainBlock.style.paddingTop = `${hh}px`;
+        document.querySelector('body').style.setProperty('--mob', `${hh}px`);
     }
 }
 

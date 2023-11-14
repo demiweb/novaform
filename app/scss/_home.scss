@@ -53,6 +53,9 @@ body {
 
 .hidden-menu {
   display: flex;
+  .btn {
+    display: none;
+  }
 
   .menu {
     display: flex;
@@ -271,7 +274,7 @@ body {
     height: 100%;
     overflow: hidden;
 
-    img {
+    img, video, iframe {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -512,7 +515,7 @@ body {
       font-family: $second-font;
       font-size: 96px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 1;
 
       display: inline-block;
@@ -523,7 +526,7 @@ body {
       color: #3B3C41;
       font-size: 20px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 140%;
     }
   }
@@ -559,7 +562,7 @@ body {
 
       font-size: 16px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 140%; /* 22.4px */
     }
   }
@@ -819,7 +822,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  img {
+  img, video, iframe {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
@@ -828,7 +831,7 @@ body {
   }
 
   &:hover {
-    img {
+    img, video, iframe {
       filter: brightness(1);
     }
   }
@@ -912,7 +915,7 @@ body {
     height: 100%;
     overflow: hidden;
 
-    img {
+    img, video, iframe {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -968,7 +971,7 @@ body {
       color: $main-color;
       font-size: 16px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 140%;
       margin-bottom: 40px;
 
@@ -1033,7 +1036,7 @@ body {
     color: #FFF;
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 28px;
     margin-top: 14px;
   }
@@ -1095,7 +1098,7 @@ body {
     color: #000;
     font-size: 24px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 140%;
     padding: 20px;
     display: flex;
@@ -1108,7 +1111,7 @@ body {
       color: #3B3C41;
       font-size: 24px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 140%;
     }
   }
@@ -1117,7 +1120,7 @@ body {
     color: #ADADAD;
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 140%;
     padding: 0 6px;
     position: absolute;
@@ -1241,7 +1244,7 @@ body {
       color: $main-color;
       font-size: 16px;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 140%;
 
       transition: all 0.3s ease-in-out;
@@ -1377,7 +1380,7 @@ body {
         color: #ADADAD;
         font-size: 16px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         line-height: normal;
         transition: all 0.3s ease-in-out;
         &:hover {
