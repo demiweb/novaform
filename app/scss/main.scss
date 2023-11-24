@@ -237,14 +237,14 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
-  background: #F5F7FF;
+  background: #EAEAEA;
   //display: none;
   border-radius: 0;
 }
 
 
 ::-webkit-scrollbar-thumb {
-  background: $main-color;
+  background: #127EBD;
   border: 1px solid rgba(255, 255, 255, 0);
   box-sizing: border-box;
   border-radius: 4px;

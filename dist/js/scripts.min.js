@@ -40,7 +40,6 @@ function helloConsole() {
 helloConsole();
 
 
-
 var allLazyLoad = [...document.querySelectorAll('.lazyload')];
 
 function allLozadImg() {
@@ -154,25 +153,6 @@ scrollAnimations();
 
 //anim
 
-// check height care
-
-let careBlock = [...document.querySelectorAll('.after-care__single')];
-
-function checkCare() {
-    if (careBlock.length) {
-        let careFirst = careBlock[0].offsetHeight;
-        let careTopHeight = document.querySelector('.after-care__top').offsetHeight;
-        let imageCare = document.querySelector('.care-img-cont .care-img').offsetHeight;
-
-        console.log(careFirst + '- 1 - 2 -' + careTopHeight + ' - 2 - 3 - ' + imageCare);
-
-        let muchMargin = imageCare - (careFirst + careTopHeight);
-        document.querySelector('.after-care__list').style.marginTop = `${muchMargin}px`;
-    }
-}
-
-checkCare();
-//
 
 $(window).scroll(function (e) {
     $el = $('.header');
@@ -184,22 +164,20 @@ $(document).ready(function () {
     $el.toggleClass('header-fixed', $(this).scrollTop() > 32);
 });
 
-let headerTop = document.querySelector('.hero-slider');
+let headerTop = document.querySelector('.first-block');
 let headerBot = document.querySelector('.header-bot');
 
 function checkHeaderHeight() {
     if (headerTop) {
 
         let hh = document.querySelector('.header').offsetHeight;
-        let mainBlock = document.querySelector('.hero-slider');
+        let mainBlock = document.querySelector('.first-block');
         mainBlock.style.paddingTop = `${hh}px`;
         document.querySelector('body').style.setProperty('--mob', `${hh}px`);
     }
 }
 
 checkHeaderHeight();
-
-
 
 
 window.addEventListener('resize', () => {
@@ -215,7 +193,7 @@ window.onresize = () => {
 let langBlock = [...document.querySelectorAll('.header-lang > span')];
 
 function controlLang() {
-    if(langBlock.length) {
+    if (langBlock.length) {
         langBlock.forEach((btn) => {
             btn.addEventListener('click', () => {
                 btn.closest('.header-lang').classList.toggle('active');
@@ -232,7 +210,7 @@ controlLang();
 let footerCols = [...document.querySelectorAll('.footer-column > span')];
 
 function controlFooterCols() {
-    if(footerCols.length) {
+    if (footerCols.length) {
         footerCols.forEach((btn) => {
             btn.addEventListener('click', () => {
                 btn.classList.toggle('open');
@@ -240,6 +218,7 @@ function controlFooterCols() {
         })
     }
 }
+
 controlFooterCols();
 //swipers
 
@@ -250,59 +229,57 @@ function startHeroSlider() {
 
     } else {
 
-            heroSlider.forEach((sld) => {
-                let sldCont = sld.querySelector('.swiper');
+        heroSlider.forEach((sld) => {
+            let sldCont = sld.querySelector('.swiper');
 
-                let pagin = sld.querySelector('.dots');
-                const swiper2 = new Swiper(sldCont, {
-                    // Optional parameters
-                    loop: true,
+            let pagin = sld.querySelector('.dots');
+            const swiper2 = new Swiper(sldCont, {
+                // Optional parameters
+                loop: true,
 
-                    slidesPerView: 1,
-                    slidesPerGroup: 1,
-                    speed: 800,
-                    crossFade: true,
-                    followFinger: true,
-                    allowTouchMove: true,
-                    threshold: true,
-                    touchMoveStopPropagation: true,
-                    touchStartPreventDefault: true,
-                    touchStartForcePreventDefault: true,
-                    touchReleaseOnEdges: true,
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                speed: 800,
+                crossFade: true,
+                followFinger: true,
+                allowTouchMove: true,
+                threshold: true,
+                touchMoveStopPropagation: true,
+                touchStartPreventDefault: true,
+                touchStartForcePreventDefault: true,
+                touchReleaseOnEdges: true,
 
-                    resistance: true,
-                    resistanceRatio: 0.3,
+                resistance: true,
+                resistanceRatio: 0.3,
 
-                    // cssMode: true,
-                    navigation: false,
-                    autoplay: false,
-                    spaceBetween: 0,
+                // cssMode: true,
+                navigation: false,
+                autoplay: false,
+                spaceBetween: 0,
 
-                    pagination: {
-                        el: pagin,
-                        type: 'bullets',
-                        bulletActiveClass: 'active',
-                        bulletClass: 'single-dot',
-                        bulletElement: 'div',
-                        clickable: true,
-                        currentClass: 'current',
-                        spaceBetween: 2,
-                    },
-                    breakpoints: {
-                        767: {
-                            autoplay: {
-                                delay: 4600,
-                            }
+                pagination: {
+                    el: pagin,
+                    type: 'bullets',
+                    bulletActiveClass: 'active',
+                    bulletClass: 'single-dot',
+                    bulletElement: 'div',
+                    clickable: true,
+                    currentClass: 'current',
+                    spaceBetween: 2,
+                },
+                breakpoints: {
+                    767: {
+                        autoplay: {
+                            delay: 4600,
                         }
                     }
+                }
 
 
+            });
 
-                });
 
-
-            })
-
+        })
 
 
     }
@@ -368,19 +345,16 @@ function startSitesSlider() {
                 }
 
 
-
             });
 
 
         })
 
 
-
     }
 }
 
 startSitesSlider();
-
 
 
 let brandsSlider = [...document.querySelectorAll('.our-brands__slider')];
@@ -440,20 +414,16 @@ function startBrandsSlider() {
                 }
 
 
-
             });
 
 
         })
 
 
-
     }
 }
 
 startBrandsSlider();
-
-
 
 
 let centerSlider = [...document.querySelectorAll('.centres-slider')];
@@ -510,13 +480,10 @@ function startCenterSlider() {
                 },
 
 
-
-
             });
 
 
         })
-
 
 
     }
@@ -524,9 +491,6 @@ function startCenterSlider() {
 
 startCenterSlider();
 //swipers
-
-
-
 
 
 var burger = [...document.querySelectorAll('.burger')];
@@ -640,10 +604,10 @@ function scrollToForm() {
         })
     }
 }
+
 scrollToForm();
 
 //modal windows
-
 //modal window
 
 let btnMod = [...document.querySelectorAll('.btn-mod')];
@@ -763,15 +727,64 @@ controlFaq();
 
 //video plays
 
-let page404 = document.querySelector('.page404');
-
-function control404() {
-    if(page404) {
-        document.querySelector('body').classList.add('green');
-    }
-}
-control404();
-
 
 //video plays
+
+
+let serviceMainBlock = document.querySelector('.service-block__cont');
+let selectService = [...document.querySelectorAll('.select-service')];
+
+function controlServiceBlocks() {
+    if (selectService.length) {
+        selectService.forEach((btn, k) => {
+            let span = btn.querySelector('span');
+
+            span.addEventListener('click', () => {
+                btn.classList.toggle('open');
+            });
+
+            let list = [...btn.querySelectorAll('.select-service__list ul li')];
+
+            list.forEach((li, l) => {
+                li.addEventListener('click', () => {
+
+
+                    span.innerHTML = li.innerHTML;
+
+                    list.forEach((li2) => {
+                        li2.classList.remove('active');
+
+                    });
+                    li.classList.add('active');
+                    if (k === 0) {
+                        serviceMainBlock.classList.add('first-step');
+                        selectService.forEach((ss) => {
+                            ss.classList.remove('disabled');
+                            ss.classList.remove('open');
+                        })
+                    }
+                });
+            })
+        })
+    }
+}
+
+controlServiceBlocks();
+
+
+//article share
+let articleNews = document.querySelector('.article-news');
+
+function controlShareNews() {
+    if (articleNews) {
+        let shareArt = articleNews.querySelector('.article-share').offsetWidth;
+
+        articleNews.style.setProperty('--par', `${shareArt}px`);
+    }
+}
+
+controlShareNews();
+//article share
+
+//
 

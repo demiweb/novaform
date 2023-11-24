@@ -64,16 +64,17 @@
     </div>
 </footer>
 
-<div class="modal-window" data-modal="call" style="display:none">
+<div class="modal-window modal-call" data-modal="call">
     <div class="backplate">
 
     </div>
     <div class="modal-container">
-        <div class="modal-bg">
 
-        </div>
         <div class="modal-head">
-            <p>Залиш свою заявку на Тест-драйв, і ми зателефонуємо найближчим часом!</p>
+            <div class="modal-logo">
+                <img src="./img/logo-main.svg" alt="">
+            </div>
+
             <div class="modal-close">
                 <span></span>
                 <span></span>
@@ -81,28 +82,74 @@
         </div>
 
         <div class="modal-cont">
+
+            <span class="sub-title">Зворотній зв'язок</span>
+            <p>Наші досвідчені менеджери зв'яжуться з вами найближчим часом, щоб надати вам необхідну допомогу та
+                відповісти на всі ваші запитання. Ми цінуємо ваше співробітництво!</p>
             <div class="form">
                 <form action="">
                     <div class="input-wrap">
-                        <input type="text" placeholder="Ваше ім'я *">
+                        <input type="text" placeholder=" " required>
+                        <span>Ваше ім'я</span>
+                    </div>
+                    <div class="input-wrap">
+                        <input type="email" placeholder=" " required>
+                        <span>Email</span>
                     </div>
                     <div class="input-wrap input-tel">
-                        <input type="text" placeholder="Ваш номер телефону *">
+                        <input type="text" placeholder="+38" required>
+                        <span>Ваш номер телефону</span>
                     </div>
-                    <button class="btn btn--green">
-                        <div class="arrow-ic">
-                            <img src="./img/arrow-r-m.svg" alt="">
-                        </div>
-                        <p>замовити консультацію</p>
-                        <div class="arrow-ic">
-                            <img src="./img/arrow-r-m.svg" alt="">
-                        </div>
+
+                    <div class="input-wrap">
+                        <input type="text" placeholder=" ">
+                        <span>Ваша область</span>
+                    </div>
+
+                    <div class="input-wrap">
+                        <textarea name="" id="" placeholder=""></textarea>
+                        <span>Текстове повідомлення</span>
+                    </div>
+                    <button class="btn btn--orange">
+                        Надіслати
                     </button>
                 </form>
             </div>
 
         </div>
     </div>
+</div>
+
+<div class="modal-window modal-sub" data-modal="sub">
+    <div class="backplate">
+
+    </div>
+
+    <div class="modal-container">
+        <div class="modal-head">
+            <div class="modal-close">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="modal-cont">
+
+            <div class="modal-subs">
+                <div class="ic">
+                    <img src="./img/subscribe-icon.svg" alt="">
+                </div>
+                <div class="txt">
+                    <span class="sub-title">Ласкаво просимо до нашої ексклюзивної спільноти!</span>
+                    <p>Вітаємо вас в елітному колі наших передплатників! Тепер ви будете першими, хто дізнається про
+                        нові продукти, спеціальні пропозиції та заходи. Чекайте на наші щотижневі розсилки та готуйтеся
+                        до занурення у світ ексклюзивних можливостей. <strong>Дякуємо за вашу довіру!</strong></p>
+                    <a href="" class="link cls">закрити</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </div>
 
 
