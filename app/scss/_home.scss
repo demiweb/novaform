@@ -2580,6 +2580,9 @@ body {
       font-weight: 300;
       line-height: normal;
       cursor: pointer;
+      &.is-hidden {
+        display: none;
+      }
 
       &:hover, &.active {
         color: $orange;

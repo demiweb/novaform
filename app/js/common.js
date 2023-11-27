@@ -734,6 +734,21 @@ controlFaq();
 let serviceMainBlock = document.querySelector('.service-block__cont');
 let selectService = [...document.querySelectorAll('.select-service')];
 
+
+function liveSearch(cards, btn) {
+    let search_query = btn.querySelector(".search-service input").value;
+
+    //Use innerText if all contents are visible
+    //Use textContent for including hidden elements
+    for (var i = 0; i < cards.length; i++) {
+        if(cards[i].textContent.toLowerCase()
+            .includes(search_query.toLowerCase())) {
+            cards[i].classList.remove("is-hidden");
+        } else {
+            cards[i].classList.add("is-hidden");
+        }
+    }
+}
 function controlServiceBlocks() {
     if (selectService.length) {
         selectService.forEach((btn, k) => {
@@ -765,11 +780,29 @@ function controlServiceBlocks() {
                     }
                 });
             })
+
+
+
+            let cards = document.querySelectorAll('.select-service__list ul li')
+
+            liveSearch(cards, btn);
+
+            //A little delay
+            let typingTimer;
+            let typeInterval = 200;
+            let searchInput = btn.querySelector(".search-service input");
+
+            searchInput.addEventListener('keyup', () => {
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(liveSearch(cards, btn), typeInterval);
+            });
+
         })
     }
 }
 
 controlServiceBlocks();
+
 
 
 //article share
