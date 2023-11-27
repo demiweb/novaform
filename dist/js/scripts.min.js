@@ -682,7 +682,8 @@ function changeTab() {
         tabBtn.forEach((btn, k) => {
             btn.addEventListener('click', () => {
                 if (btn.classList.contains('active')) {
-
+                    btn.classList.remove('active');
+                    btn.closest('.tabs-owner').querySelector('.item-tab.active').classList.remove('active');
                 } else {
                     tabBtn.forEach((btn2) => {
                         btn2.classList.remove('active');
