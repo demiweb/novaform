@@ -678,6 +678,7 @@ let tabBtn = [...document.querySelectorAll('.tab-btn')];
 function changeTab() {
     if (!tabBtn.length) {
 
+
     } else {
         tabBtn.forEach((btn, k) => {
             btn.addEventListener('click', () => {
@@ -689,6 +690,12 @@ function changeTab() {
                         btn2.classList.remove('active');
                     });
                     btn.classList.add('active');
+
+                    setTimeout(() => {
+                        $([document.documentElement, document.body]).animate({
+                            scrollTop: $(btn).offset().top - $('.header').outerHeight(true)
+                        }, 600);
+                    }, 200);
                     [...btn.closest('.tabs-owner').querySelectorAll('.item-tab')].forEach((tab, m) => {
                         if (m === k) {
                             tab.classList.add('active');
@@ -742,21 +749,55 @@ function liveSearch(cards, btn) {
     //Use innerText if all contents are visible
     //Use textContent for including hidden elements
     for (var i = 0; i < cards.length; i++) {
-        if(cards[i].textContent.toLowerCase()
+        if (cards[i].textContent.toLowerCase()
             .includes(search_query.toLowerCase())) {
-            cards[i].classList.remove("is-hidden");
+
+            if (cards[i].closest('.select-service') === btn) {
+                cards[i].classList.remove("is-hidden");
+            }
         } else {
-            cards[i].classList.add("is-hidden");
+            if (cards[i].closest('.select-service') === btn) {
+                cards[i].classList.add("is-hidden");
+            }
+
         }
     }
 }
+
+let cards = document.querySelectorAll('.select-service__list ul li');
+
 function controlServiceBlocks() {
     if (selectService.length) {
+        document.body.addEventListener('click', (e) => {
+            let tg = e.target;
+
+            if (tg.closest('.select-service')) {
+
+            } else {
+                selectService.forEach((bt) => {
+                    bt.classList.remove('open');
+                })
+            }
+        })
+
         selectService.forEach((btn, k) => {
             let span = btn.querySelector('span');
 
             span.addEventListener('click', () => {
-                btn.classList.toggle('open');
+
+                if (btn.classList.contains('open')) {
+                    btn.classList.toggle('open');
+                } else {
+                    selectService.forEach((bt) => {
+                        bt.classList.remove('open');
+                    });
+                    btn.classList.toggle('open');
+                }
+                cards = document.querySelectorAll('.select-service__list ul li');
+
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $(".services-selects").offset().top - header.offsetHeight
+                }, 500);
             });
 
             let list = [...btn.querySelectorAll('.select-service__list ul li')];
@@ -774,17 +815,15 @@ function controlServiceBlocks() {
                     li.classList.add('active');
                     if (k === 0) {
                         serviceMainBlock.classList.add('first-step');
-                        selectService.forEach((ss) => {
-                            ss.classList.remove('disabled');
-                            ss.classList.remove('open');
-                        })
+
                     }
+                    selectService.forEach((ss) => {
+                        ss.classList.remove('disabled');
+                        ss.classList.remove('open');
+                    })
                 });
             })
 
-
-
-            let cards = document.querySelectorAll('.select-service__list ul li')
 
             liveSearch(cards, btn);
 
@@ -803,7 +842,6 @@ function controlServiceBlocks() {
 }
 
 controlServiceBlocks();
-
 
 
 //article share
